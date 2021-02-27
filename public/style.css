@@ -93,6 +93,15 @@ a:hover {
     text-decoration: underline;
 }
 
+input[name=btn_logout] {
+	margin-top: 40px;
+	background-color: #666;
+}
+input[name=btn_logout]:hover {
+	background-color: #777;
+}
+
+
 h1 {
 	margin-bottom: 30px;
     font-size: 100%;
@@ -112,6 +121,7 @@ label {
 }
 
 input[type="text"],
+input[type="password"],
 textarea {
 	margin-bottom: 20px;
 	padding: 10px;
@@ -121,7 +131,8 @@ textarea {
     background: #fff;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
 	width: 200px;
 }
 textarea {
@@ -228,7 +239,8 @@ article.reply::before {
         padding: 30px 5%;
     }
 
-    input[type="text"] {
+    input[type="text"],
+    input[type="password"] {
         width: 100%;
     }
     textarea {
