@@ -184,6 +184,7 @@ hr {
     font-size: 86%;
     line-height: 1.6em;
 }
+
 .btn_cancel {
 	display: inline-block;
 	margin-right: 10px;
@@ -193,10 +194,17 @@ hr {
 	border-radius: 5px;
 	border: 1px solid #999;
 }
+
 .btn_cancel:hover {
 	color: #999;
 	border-color: #999;
 	text-decoration: none;
+}
+
+.text-confirm {
+	margin-bottom: 20px;
+	font-size: 86%;
+	line-height: 1.6em;
 }
 
 

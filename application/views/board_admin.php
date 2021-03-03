@@ -22,8 +22,19 @@
                     <div class="info">
                         <h2><?php echo $message['view_name']; ?></h2>
                         <time><?php echo date('Y年m月d日 H:i', strtotime($message['post_date'])); ?></time>
-                        <p><a href="<?php echo base_url("codeigniter/public/board_edit_admin"); ?>">編集</a></p>
-                        <p><a href="<?php echo base_url("codeigniter/public/board_delete_admin"); ?>">削除</a></p>
+                        <a href="" onclick="document.forms.message_edit.submit();return false;">編集</a>
+                        <a href="" onclick="document.forms.message_delete.submit();return false;">削除</a>
+                        
+                        <form method="post" name="message_edit" action="<?php echo base_url("codeigniter/public/board_edit_admin"); ?>">
+                            <input type="hidden" name="board_edit_show" value="編集">
+                            <input type="hidden" name="message_id" value="<?php echo $message['id']; ?>">
+                        </form>
+                        
+                        <form method="post" name="message_delete" action="<?php echo base_url("codeigniter/public/board_delete_admin"); ?>">
+                            <input type="hidden" name="board_delete_show" value="削除">
+                            <input type="hidden" name="message_id" value="<?php echo $message['id']; ?>">
+                        </form>
+
                     </div>
                     <p><?php echo $message['message']; ?></p>
                 </article>

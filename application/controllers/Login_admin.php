@@ -27,6 +27,9 @@ class Login_admin extends CI_Controller
             // バリデーション実施
             if ($this->form_validation->run())
             {
+                // sessionにログイン状態保存
+                $this->session->set_userdata('login_admin', true);
+
                 // 管理画面に遷移
                 redirect('/codeigniter/public/board_admin');
             }

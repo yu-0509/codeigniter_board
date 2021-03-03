@@ -28,7 +28,7 @@ class Board extends CI_Controller
             // バリデーション実施
             if ($this->form_validation->run())
             {
-                // データをDBに登録
+                // DB登録
                 $this->message_model->create($post_arr);
 
                 // 登録後処理
@@ -48,7 +48,7 @@ class Board extends CI_Controller
             $data['view_data'] = $this->session->userdata('view_name');
         }
 
-        $data['message_list'] = $this->message_model->read();
+        $data['message_list'] = $this->message_model->read_message();
 
         // var_dump($data);
 

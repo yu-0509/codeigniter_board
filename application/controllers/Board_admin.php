@@ -10,8 +10,8 @@ class Board_admin extends CI_Controller
         $this->load->library('form_validation');
         $data = [];
 
-        if (!empty($this->input->post('btn_logout'))) {
-            
+        if (!empty($this->input->post('btn_logout')))
+        {
             // session破棄
             $this->session->sess_destroy();
 
@@ -30,8 +30,6 @@ class Board_admin extends CI_Controller
             // var_dump($this->input->post());
             // var_dump($post_arr['view_name']);   // 表示名
             // var_dump($post_arr['message']);     // メッセージ
-
-            
         }
 
         if ($this->session->has_userdata('view_name'))
@@ -39,7 +37,7 @@ class Board_admin extends CI_Controller
             $data['view_data'] = $this->session->userdata('view_name');
         }
 
-        $data['message_list'] = $this->message_model->read();
+        $data['message_list'] = $this->message_model->read_message();
 
         // var_dump($data);
 
