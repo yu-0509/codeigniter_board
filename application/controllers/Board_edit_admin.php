@@ -52,10 +52,9 @@ class Board_edit_admin extends CI_Controller
             }
             else
             {
-                // TODO エラー表示
+                // エラー表示
                 $data['update'] = false;
                 $data["fail_message"] = "更新に失敗しました。入力値を確認してください。";
-
 
                 // 再描画用の値をセット
                 $data['view_name'] = $post_arr['view_name'];

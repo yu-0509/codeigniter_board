@@ -18,7 +18,6 @@
         <p class="error_message"><?php echo $fail_message; ?></p>
     <?php endif; ?>
 
-    <!-- ここにメッセージの入力フォームを設置 -->
     <form method="post">
         <div>
             <label for="view_name">表示名</label>
@@ -26,14 +25,13 @@
             value="<?php if(!empty($view_data)) { echo $view_data; } ?>">
         </div>
         <div>
-            <label for="message">ひと言メッセージ</label>
+            <label for="message">メッセージ</label>
             <textarea id="message" name="message"></textarea>
         </div>
         <input type="submit" name="btn_submit" value="書き込む">
     </form>
     <hr>
     <section>
-        <!-- ここに投稿したメッセージを表示 -->
         <?php if(!empty($message_list)) : ?>
             <?php foreach( $message_list as $message ) : ?>
                 <article>

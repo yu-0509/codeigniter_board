@@ -11,6 +11,10 @@
 <body>
     <h1>【管理用ページ】ひと言掲示板（編集）</h1>
    
+    <?php if(isset($update) and $update === false) : ?>
+        <p class="error_message"><?php echo $fail_message; ?></p>
+    <?php endif; ?>
+
     <form method="post">
         <div>
             <label for="view_name">表示名</label>
@@ -18,7 +22,7 @@
             value="<?php if(!empty($view_name)) { echo $view_name; } ?>">
         </div>
         <div>
-            <label for="message">ひと言メッセージ</label>
+            <label for="message">メッセージ</label>
             <textarea id="message" name="message"><?php if(!empty($message)) { echo $message; } ?></textarea>
         </div>
         <a class="btn_cancel" href="<?php echo base_url("codeigniter/public/board_admin"); ?>">キャンセル</a>

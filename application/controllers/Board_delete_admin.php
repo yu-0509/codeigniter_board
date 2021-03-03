@@ -16,8 +16,6 @@ class Board_delete_admin extends CI_Controller
             redirect('/codeigniter/public/login_admin');
         }
 
-        // var_dump($this->input->post());
-
         if (!empty($this->input->post('board_delete_show')))
         {
             // POST値取得
@@ -48,7 +46,7 @@ class Board_delete_admin extends CI_Controller
 
             if ($this->form_validation->run())
             {
-                // DB削除
+                // DBデータ削除
                 $this->message_model->delete($post_arr['message_id']);
 
                 // sessionより、描画用の値を削除
@@ -64,10 +62,9 @@ class Board_delete_admin extends CI_Controller
             }
             else
             {
-                // TODO エラー表示
+                // エラー表示
                 $data['delete'] = false;
                 $data["fail_message"] = "削除に失敗しました。";
-
 
                 // 再描画用の値をセット
                 $data['view_name'] = $this->session->userdata('view_name');
