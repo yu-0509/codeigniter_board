@@ -1,10 +1,11 @@
 <?php
 
-class Board extends CI_Controller
+class Create extends CI_Controller
 {
     public function index()
     {
         $this->load->library('session');
+        $this->load->helper('url');
         $this->load->model('message_model');
         $this->load->library('form_validation');
         $data = [];
@@ -49,6 +50,6 @@ class Board extends CI_Controller
         $data['message_list'] = $this->message_model->read_message();
 
         // 画面描画
-        $this->load->view('board', $data);
+        $this->load->view('front/board/create', $data);
     }
 }
