@@ -25,12 +25,12 @@
                         <a href="" onclick="document.forms.message_edit.submit();return false;">編集</a>
                         <a href="" onclick="document.forms.message_delete.submit();return false;">削除</a>
                         
-                        <form method="post" name="message_edit" action="<?php echo base_url("codeigniter/public/board_edit_admin"); ?>">
+                        <form method="post" name="message_edit" action="<?php echo base_url("codeigniter/public/admin/board/edit"); ?>">
                             <input type="hidden" name="board_edit_show" value="編集">
                             <input type="hidden" name="message_id" value="<?php echo $message['id']; ?>">
                         </form>
                         
-                        <form method="post" name="message_delete" action="<?php echo base_url("codeigniter/public/board_delete_admin"); ?>">
+                        <form method="post" name="message_delete" action="<?php echo base_url("codeigniter/public/admin/board/delete"); ?>">
                             <input type="hidden" name="board_delete_show" value="削除">
                             <input type="hidden" name="message_id" value="<?php echo $message['id']; ?>">
                         </form>

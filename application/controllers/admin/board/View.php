@@ -1,6 +1,6 @@
 <?php
 
-class Board_admin extends CI_Controller
+class View extends CI_Controller
 {
     public function index()
     {
@@ -17,13 +17,13 @@ class Board_admin extends CI_Controller
             $this->session->sess_destroy();
 
             // ログイン画面に遷移
-            redirect('/codeigniter/public/login_admin');
+            redirect('/codeigniter/public/admin/login/login');
         }
 
         // DBデータ取得
         $data['message_list'] = $this->message_model->read_message();
 
         // 一覧画面描画
-        $this->load->view('board_admin', $data);
+        $this->load->view('admin/board/view', $data);
     }
 }

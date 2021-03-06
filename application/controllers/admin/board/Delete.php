@@ -1,6 +1,6 @@
 <?php
 
-class Board_delete_admin extends CI_Controller
+class Delete extends CI_Controller
 {
     public function index()
     {
@@ -13,7 +13,7 @@ class Board_delete_admin extends CI_Controller
         if ($this->session->has_userdata('login_admin') !== true)
         {
             // 未ログインの場合はログイン画面に遷移
-            redirect('/codeigniter/public/login_admin');
+            redirect('/codeigniter/public/admin/login/login');
         }
 
         if (!empty($this->input->post('board_delete_show')))
@@ -34,7 +34,7 @@ class Board_delete_admin extends CI_Controller
             );
 
             // 削除画面描画
-            $this->load->view('board_delete_admin', $data[0]);
+            $this->load->view('admin/board/delete', $data[0]);
         }
         elseif (!empty($this->input->post('btn_submit')))
         {
@@ -58,7 +58,7 @@ class Board_delete_admin extends CI_Controller
                 );
 
                 // 一覧画面に遷移
-                redirect('/codeigniter/public/board_admin');
+                redirect('/codeigniter/public/admin/board/view');
             }
             else
             {
@@ -72,7 +72,7 @@ class Board_delete_admin extends CI_Controller
                 $data['id'] = $this->session->userdata('message_id');
 
                 // 削除画面再描画
-                $this->load->view('board_delete_admin', $data);
+                $this->load->view('admin/board/delete', $data);
             }
         }
     }

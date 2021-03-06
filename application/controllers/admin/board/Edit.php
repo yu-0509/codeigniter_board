@@ -1,6 +1,6 @@
 <?php
 
-class Board_edit_admin extends CI_Controller
+class Edit extends CI_Controller
 {
     public function index()
     {
@@ -12,7 +12,7 @@ class Board_edit_admin extends CI_Controller
         if ($this->session->has_userdata('login_admin') !== true)
         {
             // 未ログインの場合はログイン画面に遷移
-            redirect('/codeigniter/public/login_admin');
+            redirect('/codeigniter/public/admin/login/login');
         }
 
         if (!empty($this->input->post('board_edit_show')))
@@ -24,7 +24,7 @@ class Board_edit_admin extends CI_Controller
             $data = $this->message_model->read($post_arr['message_id']);
 
             // 編集画面描画
-            $this->load->view('board_edit_admin', $data[0]);
+            $this->load->view('admin/board/edit', $data[0]);
         }
         elseif (!empty($this->input->post('btn_submit')))
         {
@@ -48,7 +48,7 @@ class Board_edit_admin extends CI_Controller
                 $this->message_model->update($post_arr['message_id'], $data);
 
                 // 一覧画面に遷移
-                redirect('/codeigniter/public/board_admin');
+                redirect('/codeigniter/public/admin/board/view');
             }
             else
             {
@@ -62,7 +62,7 @@ class Board_edit_admin extends CI_Controller
                 $data['id'] = $post_arr['message_id'];
 
                 // 編集画面再描画
-                $this->load->view('board_edit_admin', $data);
+                $this->load->view('admin/board/edit', $data);
             }
         }
     }

@@ -27,7 +27,7 @@
             <label for="message">メッセージ</label>
             <textarea id="message" name="message" readonly><?php if(!empty($message)) { echo $message; } ?></textarea>
         </div>
-        <a class="btn_cancel" href="<?php echo base_url("codeigniter/public/board_admin"); ?>">キャンセル</a>
+        <a class="btn_cancel" href="<?php echo base_url("codeigniter/public/admin/board/view"); ?>">キャンセル</a>
         <input type="hidden" name="message_id" value="<?php echo $id; ?>">
         <input type="submit" name="btn_submit" value="削除">
     </form>

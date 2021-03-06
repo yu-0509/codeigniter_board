@@ -1,6 +1,6 @@
 <?php
 
-class Login_admin extends CI_Controller
+class Login extends CI_Controller
 {
     public function index()
     {
@@ -24,7 +24,7 @@ class Login_admin extends CI_Controller
             if (!$this->form_validation->run())
             {
                 // 【エラー】ログイン画面再描画
-                return $this->load->view('login_admin', $this->getLoginFailedInfo());
+                return $this->load->view('admin/login/login', $this->getLoginFailedInfo());
             }
 
             // ログインデータ取得
@@ -33,7 +33,7 @@ class Login_admin extends CI_Controller
             if ($admin_data === [])
             {
                 // 【エラー】ログイン画面再描画
-                return $this->load->view('login_admin', $this->getLoginFailedInfo());
+                return $this->load->view('admin/login/login', $this->getLoginFailedInfo());
             }
 
             // var_dump($admin_data);
@@ -44,18 +44,18 @@ class Login_admin extends CI_Controller
                 $this->session->set_userdata('login_admin', true);
 
                 // 管理画面に遷移
-                return redirect('/codeigniter/public/board_admin');
+                return redirect('/codeigniter/public/admin/board/view');
             }
             else
             {
                 // 【エラー】ログイン画面再描画
-                return $this->load->view('login_admin', $this->getLoginFailedInfo());
+                return $this->load->view('admin/login/login', $this->getLoginFailedInfo());
             }
         }
         else
         {
             // ログイン画面描画
-            return $this->load->view('login_admin', $data);
+            return $this->load->view('admin/login/login', $data);
         }
     }
 
