@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="destyle.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>codeigniter/asset/css/destyle.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>codeigniter/asset/css/style.css">
     <title>ひと言掲示板</title>
 </head>
 <body>
     <h1>ひと言掲示板</h1>
 
-    <?php if(isset($create) and $create === true) : ?>
-        <!-- $data["create"]がtrueの時に表示されます -->
+    <?php if(isset($create) && $create === true) : ?>
         <p class="success_message"><?php echo $success_message; ?></p>
-    <?php elseif(isset($create) and $create === false) : ?>
+    <?php elseif(isset($create) && $create === false) : ?>
         <p class="error_message"><?php echo $fail_message; ?></p>
     <?php endif; ?>
 

@@ -17,8 +17,8 @@
 
     <form method="post">
         <div>
-            <label for="user_name">ユーザ名</label>
-            <input type="text" id="user_name" name="user_name" value="">
+            <label for="mail">メールアドレス</label>
+            <input type="text" id="mail" name="mail" value="">
         </div>
         <div>
             <label for="admin_password">パスワード</label>

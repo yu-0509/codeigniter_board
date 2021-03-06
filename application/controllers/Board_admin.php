@@ -10,7 +10,8 @@ class Board_admin extends CI_Controller
         $this->load->library('form_validation');
         $data = [];
 
-        if (!empty($this->input->post('btn_logout')))
+        if (!empty($this->input->post('btn_logout')) 
+            || empty($this->session->userdata('login_admin')))
         {
             // session破棄
             $this->session->sess_destroy();
