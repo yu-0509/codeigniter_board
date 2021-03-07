@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>【管理用ページ】ひと言掲示板（編集）</h1>
-   
+
     <?php if(isset($update) and $update === false) : ?>
         <p class="error_message"><?php echo $fail_message; ?></p>
     <?php endif; ?>

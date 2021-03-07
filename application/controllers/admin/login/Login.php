@@ -38,7 +38,7 @@ class Login extends CI_Controller
 
             // var_dump($admin_data);
 
-            if ($admin_data['password'] === $post_arr['admin_password'])
+            if (password_verify($post_arr['admin_password'], $admin_data['password']))
             {
                 // sessionにログイン状態保存
                 $this->session->set_userdata('login_admin', true);
@@ -60,7 +60,7 @@ class Login extends CI_Controller
     }
 
     /**
-     * ログイン失敗時のデータを取得
+     * ログイン失敗時のパラメータを取得
      *
      * @return array
      */

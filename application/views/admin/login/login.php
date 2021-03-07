@@ -25,6 +25,7 @@
             <input type="password" id="admin_password" name="admin_password" value="">
         </div>
         <input type="submit" name="btn_submit" value="ログイン">
+        <a class="btn_cancel" href="<?php echo base_url("codeigniter/public/admin/user/create"); ?>">ユーザ登録</a>
     </form>
 
 </body>

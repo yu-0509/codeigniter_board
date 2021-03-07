@@ -30,6 +30,7 @@
             <label for="admin_password">パスワード</label>
             <input type="password" id="admin_password" name="admin_password" value="">
         </div>
+        <a class="btn_cancel" href="<?php echo base_url("codeigniter/public/admin/login/login"); ?>">戻る</a>
         <input type="submit" name="btn_submit" value="作成">
     </form>
 

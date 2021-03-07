@@ -22,11 +22,14 @@ class Create extends CI_Controller
 
             if ($this->form_validation->run())
             {
+                // パスワード暗号化
+                $hash_pass = password_hash($post_arr['admin_password'], PASSWORD_DEFAULT);
+
                 // 登録データ準備
                 $data = [
                     'name' => $post_arr['name'],
                     'mail'   => $post_arr['mail'],
-                    'password' => $post_arr['admin_password'],
+                    'password' => $hash_pass,
                 ];
 
                 // DB登録
@@ -41,10 +44,7 @@ class Create extends CI_Controller
                 }
                 else
                 {
-                    $data = [
-                        'create' => false,
-                        'fail_message' => "入力値を確認してください。",
-                    ];
+                    $data = $this->getUserCreateFailedInfo();
                 }
 
                 // ユーザ登録画面描画
@@ -52,10 +52,7 @@ class Create extends CI_Controller
             }
             else
             {
-                $data = [
-                    'create' => false,
-                    'fail_message' => "入力値を確認してください。",
-                ];
+                $data = $this->getUserCreateFailedInfo();
             }
 
             // ユーザ登録画面描画
@@ -68,4 +65,20 @@ class Create extends CI_Controller
         }
     }
 
+    /**
+     * 失敗時の表示パラメータを取得
+     *
+     * @return array
+     */
+    private function getUserCreateFailedInfo()
+    {
+        $failed = [];
+
+        $failed = [
+            'create' => false,
+            'fail_message' => "入力値を確認してください。",
+        ];
+
+        return $failed;
+    }
 }
